@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from Review_Management.api import ReviewMediaList, ReviewMediaDetails
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/ReviewMedia_List/', ReviewMediaList.as_view(), name='ReviewMediaList'),
+    path('api/ReviewMedia_Details', ReviewMediaDetails.as_view(), name='ReviewMediaDetails'),
 ]
